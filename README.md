@@ -71,7 +71,7 @@ python manage.py runserver
 
 
 ### 🔐 Login Page
-https://github.com/sayaliborate/Prana-Construction-Management-System/blob/ee32ff1c3f51a5ddd90782c982122b12ebd9e6a9/Screenshot%202025-12-05%20020143.png
+<img width="1909" height="950" alt="image" src="https://github.com/user-attachments/assets/c5782860-b092-4ac9-93f3-3b420945c83b" />
 ### 📊 Dashboard
 ![Dashboard](screenshots/dashboard.png)
 

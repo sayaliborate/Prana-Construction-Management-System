@@ -1,0 +1,55 @@
+<div class="contact-message-container">
+  <h2>📩 Contact Messages</h2>
+
+  <button class="pdf-btn" (click)="downloadPDF()">📄 Download PDF</button>
+
+  <div *ngIf="loading" class="loading">Loading messages...</div>
+  <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+  <div *ngIf="successMessage" class="success">{{ successMessage }}</div>
+
+  <!-- PDF CONTENT START -->
+  <div id="pdfContent">
+
+    <table *ngIf="messages.length > 0 && !loading" class="message-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Subject</th>
+          <th>Message</th>
+          <th>Created</th>
+          <th>Status</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let msg of messages; let i = index" [class.unread]="!msg.is_read">
+          <td>{{ msg.name }}</td>
+          <td>{{ msg.email }}</td>
+          <td>{{ msg.phone || '-' }}</td>
+          <td>{{ msg.subject }}</td>
+          <td>{{ msg.message }}</td>
+          <td>{{ msg.created_at | date: 'short' }}</td>
+          <td>
+            <span class="status" [ngClass]="{ read: msg.is_read, unread: !msg.is_read }">
+              {{ msg.is_read ? 'Read' : 'Unread' }}
+            </span>
+          </td>
+          <td>
+            <button (click)="markAsRead(msg)" class="status-btn">
+              {{ msg.is_read ? 'Mark Unread' : 'Mark Read' }}
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <!-- PDF CONTENT END -->
+
+  <div *ngIf="!messages.length && !loading" class="no-data">
+    No contact messages found.
+  </div>
+</div>

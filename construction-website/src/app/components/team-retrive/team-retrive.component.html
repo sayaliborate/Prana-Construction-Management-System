@@ -1,0 +1,29 @@
+<div class="client-container">
+  <h2>Team Member List</h2>
+  <button routerLink="/team-member" class="add-btn">+ Add Here</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Avatar</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Position</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let member of clients">
+        <td>{{ member.id }}</td>
+        <td>
+          <img [src]="member.avatar" alt="{{ member.name }}" class="avatar-img" />
+        </td>
+        <td>{{ member.name }}</td>
+        <td>{{ member.email }}</td>
+        <td>{{ member.phone }}</td>
+        <td>{{ member.position }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

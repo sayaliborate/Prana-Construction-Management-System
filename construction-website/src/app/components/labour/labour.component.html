@@ -1,0 +1,42 @@
+<h2 class="title">Labour List</h2>
+
+
+<div class="top-bar">
+
+  <button routerLink="/add-labour" class="add-btn">➕ Add Labour</button>
+</div>
+<div *ngIf="loading" class="loading">Loading...</div>
+
+<div *ngIf="!loading && labours.length > 0" class="table-container">
+  <table class="labour-table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Work Type</th>
+        <th>Daily Wage (₹)</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of labours; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ l.name }}</td>
+        <td>{{ l.email || 'N/A' }}</td>
+        <td>{{ l.phone }}</td>
+        <td>{{ l.work_type }}</td>
+        <td>{{ l.daily_wage }}</td>
+        <td class="actions">
+          <a [routerLink]="['/edit-labour', l.id]" class="edit-btn">✏️ Edit</a>
+          <button (click)="deleteLabour(l.id)" class="delete-btn">🗑️ Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!loading && labours.length === 0" class="no-data">
+  No labour data found.
+</div>

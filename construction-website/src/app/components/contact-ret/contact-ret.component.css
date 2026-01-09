@@ -1,0 +1,96 @@
+.contact-message-container {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.message-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.message-table th, .message-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.message-table th {
+  background-color: #0078d7;
+  color: white;
+  font-weight: 600;
+}
+
+.message-table tr.unread {
+  background-color: #f9f9f9;
+  font-weight: 500;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.status.read {
+  background-color: #e7f9ef;
+  color: #2e8b57;
+}
+
+.status.unread {
+  background-color: #fff4e5;
+  color: #d2691e;
+}
+
+.status-btn {
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #0078d7;
+  color: white;
+  transition: background 0.2s;
+}
+
+.status-btn:hover {
+  background-color: #005fa3;
+}
+
+.loading, .no-data, .error, .success {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+}
+.pdf-btn {
+  background: #007bff;
+  color: white;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  cursor: pointer;
+}
+.pdf-btn:hover {
+  background: #0056b3;
+}

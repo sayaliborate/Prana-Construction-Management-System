@@ -1,0 +1,130 @@
+.form-container {
+  max-width: 700px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 30px 40px;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.form-container h2 {
+  text-align: center;
+  color: #2a4d69;
+  margin-bottom: 25px;
+  font-size: 26px;
+  letter-spacing: 0.5px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px 25px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+input {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #2a9d8f;
+  box-shadow: 0 0 5px rgba(42, 157, 143, 0.4);
+}
+
+button[type="submit"] {
+  margin-top: 25px;
+  width: 100%;
+  background: #2a9d8f;
+  color: #fff;
+  padding: 12px 0;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button[type="submit"]:hover {
+  background: #23867d;
+  transform: translateY(-2px);
+}
+
+.success,
+.error {
+  text-align: center;
+  margin-top: 18px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.success {
+  color: #2e8b57;
+}
+
+.error {
+  color: #d62828;
+}
+
+/* 🌸 Responsive design */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 25px;
+  }
+
+  h2 {
+    font-size: 22px;
+  }
+
+  input {
+    font-size: 14px;
+  }
+}
+select {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+select:focus {
+  border-color: #2a9d8f;
+  box-shadow: 0 0 5px rgba(42, 157, 143, 0.4);
+}
+select, option {
+  color: #333;
+  background-color: #fff;
+}
+.form-group select {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}
+
+.form-group input[type="datetime-local"] {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+}

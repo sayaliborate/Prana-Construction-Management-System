@@ -1,0 +1,65 @@
+<div class="add-client-container">
+  <h2>Add New Client</h2>
+
+  <form #clientForm="ngForm" (ngSubmit)="onSubmit(clientForm)">
+    <div class="form-group">
+      <label>Name</label>
+      <input type="text" name="name" [(ngModel)]="client.name" required />
+    </div>
+
+    <div class="form-group">
+      <label>Client Type</label>
+      <select name="client_type" [(ngModel)]="client.client_type" required>
+        <option value="individual">Individual</option>
+        <option value="company">Company</option>
+      </select>
+    </div>
+
+    <div *ngIf="client.client_type === 'company'">
+      <div class="form-group">
+        <label>Company Name</label>
+        <input type="text" name="company_name" [(ngModel)]="client.company_name" />
+      </div>
+
+      <div class="form-group">
+        <label>Contact Person</label>
+        <input type="text" name="contact_person" [(ngModel)]="client.contact_person" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label>Email</label>
+      <input type="email" name="email" [(ngModel)]="client.email" required />
+    </div>
+
+    <div class="form-group">
+      <label>Phone</label>
+      <input type="text" name="phone" [(ngModel)]="client.phone" required />
+    </div>
+
+    <div class="form-group">
+      <label>Address</label>
+      <textarea name="address" [(ngModel)]="client.address" required></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>GST Number</label>
+      <input type="text" name="gst_number" [(ngModel)]="client.gst_number" />
+    </div>
+
+    <div class="form-group">
+      <label>PAN Number</label>
+      <input type="text" name="pan_number" [(ngModel)]="client.pan_number" />
+    </div>
+
+    <div class="form-group">
+      <label>Credit Limit</label>
+      <input type="number" name="credit_limit" [(ngModel)]="client.credit_limit" />
+    </div>
+
+    <button type="submit" [disabled]="!clientForm.valid">Add Client</button>
+  </form>
+
+  <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+  <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+</div>

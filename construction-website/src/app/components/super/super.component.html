@@ -1,0 +1,30 @@
+<div class="dashboard-container">
+  <header class="dashboard-header">
+    <h1>Supervisor Dashboard</h1>
+    <p>Welcome, {{ username }}!</p>
+    <button (click)="logout()" class="logout-btn">Logout</button>
+  </header>
+
+  <section class="stats-section">
+    <div class="stat-card">
+      <h3>Total Projects</h3>
+      <p class="stat-number">10</p>
+    </div>
+    <div class="stat-card">
+      <h3>Pending Tasks</h3>
+      <p class="stat-number">5</p>
+    </div>
+    <div class="stat-card">
+      <h3>Team Members</h3>
+      <p class="stat-number">8</p>
+    </div>
+  </section>
+
+  <section class="actions-section">
+    <button class="action-btn">View Projects</button>
+    <button class="action-btn" [routerLink]="['/stock-tran']">Stock Transaction</button>
+
+    <button class="action-btn">Assign Tasks</button>
+    <button class="action-btn">Reports</button>
+  </section>
+</div>

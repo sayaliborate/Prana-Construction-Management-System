@@ -1,0 +1,40 @@
+<div class="site-list-container">
+
+  <h2>Site Details</h2>
+
+  <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+
+  <button class="pdf-btn" (click)="downloadPDF()">📄 Download PDF</button>
+
+  <!-- PDF content wrapper -->
+  <div id="pdfContent">
+
+    <table *ngIf="sites.length > 0">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Title</th>
+          <th>Region</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Team Leader</th>
+          <th>Created At</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let site of sites">
+          <td>{{ site.id }}</td>
+          <td>{{ site.title }}</td>
+          <td>{{ site.region }}</td>
+          <td>{{ site.category | titlecase }}</td>
+          <td>{{ site.description }}</td>
+          <td>{{ site.team_leader_name }}</td>
+          <td>{{ site.created_at | date:'short' }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+
+  <p *ngIf="sites.length === 0 && !errorMsg">No sites found.</p>
+</div>

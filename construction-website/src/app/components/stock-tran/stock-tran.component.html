@@ -1,0 +1,43 @@
+<div class="form-container">
+  <h2>Add Stock Transaction</h2>
+
+  <form [formGroup]="transactionForm" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="material">Material:</label>
+      <select id="material" formControlName="material">
+        <option value="">Select Material</option>
+        <option *ngFor="let mat of materials" [value]="mat.id">{{ mat.name }} ({{ mat.unit }})</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="transaction_type">Transaction Type:</label>
+      <select id="transaction_type" formControlName="transaction_type">
+        <option value="">Select Type</option>
+        <option *ngFor="let type of transactionTypes" [value]="type.value">{{ type.label }}</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" formControlName="quantity" step="0.01" />
+    </div>
+
+    <div class="form-group">
+      <label for="unit_price">Unit Price:</label>
+      <input type="number" id="unit_price" formControlName="unit_price" step="0.01" />
+    </div>
+
+    <div class="form-group">
+      <label for="reference_number">Reference Number:</label>
+      <input type="text" id="reference_number" formControlName="reference_number" />
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Notes:</label>
+      <textarea id="notes" formControlName="notes"></textarea>
+    </div>
+
+    <button type="submit" [disabled]="loading">{{ loading ? 'Submitting...' : 'Add Transaction' }}</button>
+  </form>
+</div>

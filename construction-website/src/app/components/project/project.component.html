@@ -1,0 +1,130 @@
+<div class="project-container">
+  <h2>Manage Projects</h2>
+
+  <form (ngSubmit)="addProject()" class="project-form">
+    <!-- Site Selection -->
+    <div class="form-group">
+      <label for="site">Site *</label>
+      <select [(ngModel)]="newProject.site" name="site" id="site" required>
+        <option value="">Select Site</option>
+        <option *ngFor="let site of sites" [value]="site.id">
+          {{ site.title }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Client Selection -->
+    <div class="form-group">
+      <label for="client">Client *</label>
+      <select [(ngModel)]="newProject.client" name="client" id="client" required>
+        <option value="">Select Client</option>
+        <option *ngFor="let client of clients" [value]="client.id">
+          {{ client.name }}
+        </option>
+      </select>
+    </div>
+
+    <!-- Name -->
+    <div class="form-group">
+      <label for="name">Project Name *</label>
+      <input type="text" id="name" name="name" [(ngModel)]="newProject.name" required />
+    </div>
+
+    <!-- Slug -->
+    <div class="form-group">
+      <label for="slug">Slug *</label>
+      <input type="text" id="slug" name="slug" [(ngModel)]="newProject.slug" required />
+    </div>
+
+    <!-- Dates -->
+    <div class="form-group">
+      <label for="start_date">Start Date</label>
+      <input type="date" id="start_date" name="start_date" [(ngModel)]="newProject.start_date" />
+      <small>Note: You are 5.5 hours ahead of server time.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="estimated_completion">Estimated Completion</label>
+      <input type="date" id="estimated_completion" name="estimated_completion"
+             [(ngModel)]="newProject.estimated_completion" />
+      <small>Note: You are 5.5 hours ahead of server time.</small>
+    </div>
+
+    <div class="form-group">
+      <label for="actual_completion">Actual Completion</label>
+      <input type="date" id="actual_completion" name="actual_completion"
+             [(ngModel)]="newProject.actual_completion" />
+      <small>Note: You are 5.5 hours ahead of server time.</small>
+    </div>
+
+    <!-- Budget -->
+    <div class="form-group">
+      <label for="budget">Budget *</label>
+      <input type="number" id="budget" name="budget" [(ngModel)]="newProject.budget" required />
+    </div>
+
+    <!-- Progress -->
+    <div class="form-group">
+      <label for="progress">Progress (%) *</label>
+      <input type="number" id="progress" name="progress" [(ngModel)]="newProject.progress" required />
+    </div>
+
+    <!-- Status -->
+    <div class="form-group">
+      <label for="status">Status *</label>
+      <select id="status" name="status" [(ngModel)]="newProject.status" required>
+        <option value="pending">Pending</option>
+        <option value="in_progress">In Progress</option>
+        <option value="completed">Completed</option>
+        <option value="on_hold">On Hold</option>
+      </select>
+    </div>
+
+    <!-- Description -->
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" name="description" [(ngModel)]="newProject.description"></textarea>
+    </div>
+
+    <!-- Featured -->
+    <div class="form-group checkbox">
+      <label>
+        <input type="checkbox" [(ngModel)]="newProject.featured" name="featured" />
+        Featured Project
+      </label>
+    </div>
+
+    <!-- Submit -->
+    <button type="submit">Add Project</button>
+  </form>
+
+  <!-- Existing Projects -->
+  <h3>Existing Projects</h3>
+  <table *ngIf="projects.length > 0">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Site</th>
+        <th>Client</th>
+        <th>Name</th>
+        <th>Status</th>
+        <th>Progress</th>
+        <th>Budget</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let project of projects">
+        <td>{{ project.id }}</td>
+        <td>{{ project.site_title || 'N/A' }}</td>
+        <td>{{ project.client_name || 'N/A' }}</td>
+        <td>{{ project.name }}</td>
+        <td>{{ project.status }}</td>
+        <td>{{ project.progress }}%</td>
+        <td>{{ project.budget | currency:'INR' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="projects.length === 0 && !errorMsg">No projects found.</p>
+  <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+</div>

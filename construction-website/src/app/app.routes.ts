@@ -1,0 +1,49 @@
+import { Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { LoginComponent } from './components/login/login.component';
+import { AddClientComponent } from './components/add-client/add-client.component';
+import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
+import { ClientListComponent } from './components/client-list/client-list.component';
+import { TeamMemberComponent } from './components/team-member/team-member.component';
+import { TeamRetriveComponent } from './components/team-retrive/team-retrive.component';
+import { AddSiteComponent } from './components/add-site/add-site.component';
+import { SiteRetriveComponent } from './components/site-retrive/site-retrive.component';
+import { ProjectComponent } from './components/project/project.component';
+import { SupervisorComponent } from './components/supervisor/supervisor.component';
+import { SupervisorDashboardComponent } from './components/supervisor-dashboard/supervisor-dashboard.component';
+import { LabourComponent } from './components/labour/labour.component';
+import { AddLabourComponent } from './components/add-labour/add-labour.component';
+import { SalarySlipComponent } from './components/salary-slip/salary-slip.component';
+import { SalaryRetriveComponent } from './components/salary-retrive/salary-retrive.component';
+import { ContactFormComponent } from './components/contact-form/contact-form.component';
+import { ContactRetComponent } from './components/contact-ret/contact-ret.component';
+import { AbiutUsComponent } from './components/abiut-us/abiut-us.component';
+import { HPrjComponent } from './components/h-prj/h-prj.component';
+import { SuperComponent } from './components/super/super.component';
+
+export const routes: Routes = [
+    { path: '', component: HomeComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'add-client', component: AddClientComponent },
+    { path: 'admin-dashboard', component: AdminDashboardComponent },
+    { path: 'client-list', component: ClientListComponent },
+    { path: 'team-retrive', component: TeamRetriveComponent },
+    { path: 'team-member', component: TeamMemberComponent },
+    { path: 'add-site', component: AddSiteComponent },
+    { path: 'site-retrive', component: SiteRetriveComponent },
+    { path: 'project', component: ProjectComponent },
+    { path: 'supervisor', component: SupervisorComponent },
+    { path: 'supervisor-dashboard', component: SupervisorDashboardComponent },
+    { path: 'labour', component: LabourComponent },
+    { path: 'add-labour', component: AddLabourComponent },
+    { path: 'salary-retrive', component: SalaryRetriveComponent },
+    { path: 'salary-slip', component: SalarySlipComponent },
+    { path: 'contact-form', component: ContactFormComponent },
+    { path: 'contact-ret', component: ContactRetComponent },
+    { path: 'abiut-us', component: AbiutUsComponent },
+    { path: 'h-prj', component: HPrjComponent },
+    { path: 'super', component: SuperComponent },
+    { path: 'stock-tran', component: SuperComponent },
+
+
+];

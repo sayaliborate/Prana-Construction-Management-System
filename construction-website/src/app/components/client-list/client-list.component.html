@@ -1,0 +1,30 @@
+<div class="client-container">
+  <h2>Client List</h2>
+  <button routerLink="/add-client" class="add-btn">+ Add Client</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Type</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let c of clients">
+        <td data-label="ID">{{ c.id }}</td>
+        <td data-label="Name">{{ c.name }}</td>
+        <td data-label="Email">{{ c.email }}</td>
+        <td data-label="Phone">{{ c.phone }}</td>
+        <td data-label="Type">{{ c.client_type }}</td>
+        <td data-label="Actions">
+          <!-- <button class="edit-btn" (click)="editClient(c.id)">Edit</button> -->
+          <button class="delete-btn" (click)="deleteClient(c.id)">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

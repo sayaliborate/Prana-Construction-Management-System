@@ -1,0 +1,43 @@
+<div class="container">
+  <h2>Add Supervisor</h2>
+
+  <form (ngSubmit)="addSupervisor()">
+    <input type="text" placeholder="Name" [(ngModel)]="name" name="name" required />
+    <input type="email" placeholder="Email" [(ngModel)]="email" name="email" required />
+    <input type="text" placeholder="Phone" [(ngModel)]="phone" name="phone" required />
+    <input type="text" placeholder="Address" [(ngModel)]="address" name="address" required />
+    <input type="text" placeholder="Designation" [(ngModel)]="designation" name="designation" required />
+    <input type="number" placeholder="Experience Years" [(ngModel)]="experience_years" name="experience_years" required />
+    <input type="number" placeholder="Salary" [(ngModel)]="salary" name="salary" required />
+    <button type="submit">Add Supervisor</button>
+  </form>
+
+  <button class="pdf-btn" (click)="downloadPDF()">📄 Download PDF</button>
+
+  <h2>Supervisor List</h2>
+
+  <div id="pdfContent">
+    <table border="1" cellpadding="5">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Designation</th>
+          <th>Experience</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let sup of supervisors">
+          <td>{{ sup.name }}</td>
+          <td>{{ sup.email }}</td>
+          <td>{{ sup.phone }}</td>
+          <td>{{ sup.designation }}</td>
+          <td>{{ sup.experience_years }}</td>
+          <td>{{ sup.salary }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

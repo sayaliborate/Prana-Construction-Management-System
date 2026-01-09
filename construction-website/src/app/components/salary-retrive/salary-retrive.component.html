@@ -1,0 +1,48 @@
+<h2 class="title">Salary Slips</h2>
+
+<div class="top-bar">
+  <button routerLink="/salary-slip" class="add-btn">➕ Add Salary Slip</button>
+</div>
+
+<div *ngIf="loading" class="loading">Loading...</div>
+
+<div *ngIf="!loading && salarySlips.length > 0" class="table-container">
+  <table class="salary-table">
+    <thead>
+      <tr>
+        <th>Labour</th>
+        <th>Month</th>
+        <th>Year</th>
+        <th>Net Salary</th>
+        <th>Paid</th>
+        <th>Generated Date</th>
+        <th>Action</th>
+        <th>PDF</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let slip of salarySlips; let i = index">
+        <td>{{ slip.labour_name }}</td>
+        <td>{{ slip.month }}</td>
+        <td>{{ slip.year }}</td>
+        <td>₹{{ slip.net_salary }}</td>
+        <td>
+          <i *ngIf="slip.is_paid" class="fas fa-check-circle paid-icon"></i>
+          <i *ngIf="!slip.is_paid" class="fas fa-times-circle unpaid-icon"></i>
+          {{ slip.is_paid ? 'Yes' : 'No' }}
+        </td>
+        <td>{{ slip.generated_date | date: 'medium' }}</td>
+        <td>
+          <button (click)="deleteSlip(slip.id)" class="delete-btn">Delete</button>
+        </td>
+        <td>
+          <button (click)="downloadPDF(slip)" class="pdf-btn">📄 PDF</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<div *ngIf="!loading && salarySlips.length === 0" class="no-data">
+  No salary slips found.
+</div>

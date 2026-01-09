@@ -1,0 +1,59 @@
+<div class="add-site-container">
+  <h2>Add New Site</h2>
+
+  <form [formGroup]="siteForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label>Title</label>
+      <input formControlName="title" placeholder="Enter site title" />
+    </div>
+
+    <div class="form-group">
+      <label>Region</label>
+      <input formControlName="region" placeholder="Enter region" />
+    </div>
+
+    <div class="form-group">
+      <label>Category</label>
+      <select formControlName="category">
+        <option *ngFor="let cat of categories" [value]="cat">
+          {{ cat | titlecase }}
+        </option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea formControlName="description" rows="3" placeholder="Write description..."></textarea>
+    </div>
+
+    <div class="form-group">
+      <label>Team Leader</label>
+      <select formControlName="team_leader">
+        <option value="">-- Select Team Leader --</option>
+        <option *ngFor="let leader of teamLeaders" [value]="leader.id">
+          {{ leader.name }} — {{ leader.position }}
+        </option>
+      </select>
+    </div>
+
+    <button type="submit" [disabled]="siteForm.invalid">Add Site</button>
+
+    <p class="success" *ngIf="successMsg">{{ successMsg }}</p>
+    <p class="error" *ngIf="errorMsg">{{ errorMsg }}</p>
+  </form>
+
+  <!-- ✅ Team Leader Preview Section (fixed) -->
+  <div *ngIf="siteForm.value.team_leader" class="leader-preview">
+    <h3>Selected Team Leader</h3>
+
+    <ng-container *ngFor="let leader of teamLeaders">
+      <div *ngIf="leader.id === siteForm.value.team_leader" class="leader-card">
+        <img [src]="leader.avatar" alt="{{ leader.name }}" class="leader-avatar-large" />
+        <p><strong>{{ leader.name }}</strong></p>
+        <p>{{ leader.position }}</p>
+        <p>{{ leader.email }}</p>
+        <p>{{ leader.phone }}</p>
+      </div>
+    </ng-container>
+  </div>
+</div>

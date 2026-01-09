@@ -1,0 +1,63 @@
+<!-- <nav class="navbar">
+  <div class="logo">
+    <a routerLink="/">🏗 PRANA Construction Co.</a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/about">About</a></li>
+    <li><a routerLink="/projects">Projects</a></li>
+    <li><a routerLink="/login">login</a></li>
+  </ul>
+</nav>
+
+<li *ngIf="role === 'admin'"><a routerLink="/admin-dashboard">Admin Dashboard</a></li>
+<li *ngIf="role === 'admin'"><a routerLink="/add-client">Add Client</a></li>
+
+<li *ngIf="role === 'supervisor'"><a routerLink="/team-leader-dashboard">Team Leader Dashboard</a></li>
+
+<li *ngIf="role === 'user'"><a routerLink="/user-dashboard">User Dashboard</a></li>
+ -->
+
+
+ <nav class="navbar">
+  <div class="logo">
+    <a routerLink="/">🏗 PRANA Construction Co.</a>
+  </div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/abiut-us">About</a></li>
+    <li><a routerLink="/h-prj">Projects</a></li>
+    <li><a routerLink="/contact-form">Contact</a></li>
+
+    <!-- Show only if NOT logged in -->
+    <li *ngIf="!isLoggedIn"><a routerLink="/login">Login</a></li>
+
+    <!-- Admin links -->
+    <li *ngIf="isLoggedIn && role === 'admin'">
+      <a routerLink="/admin-dashboard">Admin Dashboard</a>
+    </li>
+    <li *ngIf="isLoggedIn && role === 'admin'">
+      <a routerLink="/add-client">Add Client</a>
+    </li>
+
+    <!-- Team Leader links -->
+    <li *ngIf="isLoggedIn && role === 'supervisor'">
+      <a routerLink="/team-leader-dashboard">Team Leader Dashboard</a>
+    </li>
+
+    <!-- User links -->
+    <li *ngIf="isLoggedIn && role === 'user'">
+      <a routerLink="/user-dashboard">User Dashboard</a>
+    </li>
+    <li *ngIf="isLoggedIn && role === 'user'">
+      <a routerLink="/user-dashboard">add marks</a>
+    </li>
+
+    <!-- Logout button -->
+    <li *ngIf="isLoggedIn" class="logout">
+      <button (click)="logout()">Logout</button>
+    </li>
+  </ul>
+</nav>

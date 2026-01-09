@@ -65,9 +65,16 @@ python manage.py runserver
 
 🔗 Open: http://127.0.0.1:8000
 
-📸 Screenshots
+## 📸 Screenshots
 
-Add screenshots of your UI here to make the repo pop ✨
+### 🔐 Login Page
+![Login Page](screenshots/login.png)
+
+### 📊 Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### 🏗️ Project Management
+![Projects](screenshots/projects.png)
 
 
 👩‍💻 Developer

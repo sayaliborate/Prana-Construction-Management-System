@@ -73,7 +73,8 @@ python manage.py runserver
 ### 🔐 Login Page
 <img width="1909" height="950" alt="image" src="https://github.com/user-attachments/assets/c5782860-b092-4ac9-93f3-3b420945c83b" />
 ### 📊 Dashboard
-![Dashboard](screenshots/dashboard.png)
+<img width="1902" height="906" alt="image" src="https://github.com/user-attachments/assets/b1a38eb8-2cfa-41f4-b48a-e8759ba79947" />
+
 
 ### 🏗️ Project Management
 ![Projects](screenshots/projects.png)

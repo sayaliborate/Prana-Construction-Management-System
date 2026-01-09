@@ -68,7 +68,7 @@ python manage.py runserver
 ## 📸 Screenshots
 
 ### 🔐 Login Page
-![Login Page](screenshots/login.png)
+![Login Page](Screenshot 2025-12-05 151540.png)
 
 ### 📊 Dashboard
 ![Dashboard](screenshots/dashboard.png)

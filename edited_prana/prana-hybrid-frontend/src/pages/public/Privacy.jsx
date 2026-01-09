@@ -1,0 +1,1 @@
+export default function Privacy(){return <div className='prose'><h2>Privacy Policy</h2><p>We respect your privacy. This is a placeholder page.</p></div>}

@@ -66,7 +66,9 @@ python manage.py runserver
 🔗 Open: http://127.0.0.1:8000
 
 ## 📸 Screenshots
-<img width="1917" height="1077" alt="image" src="https://github.com/user-attachments/assets/23c62617-f3e7-4948-ac3e-4a9b420fbcc3" />
+<img width="1917" height="1077" alt="image" src="https://github.com/user-attachments/assets/23c62617-f3e7-4948-ac3e-4a9b420fbcc3" /><br>
+<img width="1908" height="906" alt="image" src="https://github.com/user-attachments/assets/f21a411c-481a-4e45-8cb0-4b966c8fa981" />
+
 
 ### 🔐 Login Page
 https://github.com/sayaliborate/Prana-Construction-Management-System/blob/ee32ff1c3f51a5ddd90782c982122b12ebd9e6a9/Screenshot%202025-12-05%20020143.png
